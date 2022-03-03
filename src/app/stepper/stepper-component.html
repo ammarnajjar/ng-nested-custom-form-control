@@ -1,0 +1,16 @@
+<form class="container" [formGroup]="form">
+  <mat-icon (click)="onRemove()">remove_circle_outline</mat-icon>
+  <mat-form-field appearance="outline" [floatLabel]="'always'">
+    <mat-label>Stepper</mat-label>
+    <input
+      matInput
+      [formControl]="inputValue"
+      (blur)="onTouched()"
+    />
+    <mat-error *ngIf="form.invalid">
+      Value is <strong>not valid</strong>
+    </mat-error>
+  </mat-form-field>
+  <mat-icon (click)="onAdd()">add_circle_outline</mat-icon>
+</form>
+
